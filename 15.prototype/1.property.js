@@ -44,3 +44,30 @@ console.log(Object.keys(dog)); // name은 열거 안됨
 console.log(Object.entries(dog)); // name은 열거 안됨
 delete dog.name; // 삭제 불가
 console.log(dog.name);
+
+const student = {};
+Object.defineProperties(student, {
+  firstName: {
+    value: '영희',
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  },
+  lastName: {
+    value: '고',
+    writable: true,
+    enumerable: true,
+    configurable: true,
+  },
+  fullName: {
+    get() {
+      return `${this.lastName}${this.firstName}`;
+    },
+    set(name) {
+      [this.lastName, this.firstName] = name.split(' ');
+    },
+    configurable: true,
+  },
+});
+
+console.log(student.fullName);
