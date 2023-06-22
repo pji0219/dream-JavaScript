@@ -31,3 +31,4 @@ Dog.hello = () => {
   console.log('hello!');
 };
 Dog.hello();
+Dog.MAX_AGE = 20;
