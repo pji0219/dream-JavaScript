@@ -21,10 +21,6 @@ Dog.prototype.play = () => {
   console.log('같이 놀자 댕댕아!');
 };
 
-const dog1 = new Dog('멍멍', '🐶', 'pji');
-dog1.play();
-dog1.printName();
-
 function Tiger(name, emoji) {
   Animal.call(this, name, emoji);
 }
@@ -35,6 +31,18 @@ Tiger.prototype.hunt = () => {
   console.log('사냥하자!');
 };
 
+const dog1 = new Dog('멍멍', '🐶', 'pji');
+dog1.play();
+dog1.printName();
+
 const tiger1 = new Tiger('어흥', '🐯');
 tiger1.hunt();
 tiger1.printName();
+
+// Dog 생성자 함수의 인스턴스인가?
+console.log(dog1 instanceof Dog); // true
+
+// Animal 생성자 함수를 상속 했기 때문에
+console.log(dog1 instanceof Animal); // true
+
+console.log(dog1 instanceof Tiger); // false
