@@ -7,10 +7,11 @@ function runInDelay(seconds) {
     setTimeout(() => {
       resolve();
     }, seconds * 1000);
+    // setTimeout(resolve, seconds * 1000);
   });
 }
 
-runInDelay(2)
+runInDelay()
   .then(() => console.log('타이머 완료!'))
   .catch((error) => console.error(error))
   .finally(() => console.log('끝났다!'));

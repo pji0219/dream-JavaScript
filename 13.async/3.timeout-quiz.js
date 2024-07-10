@@ -3,10 +3,15 @@
 function runInDelay(callback, seconds) {
   const sec = seconds * 1000;
 
-  if (sec < 0) throw new Error('0보다 작은 수로 설정할 수 없습니다.');
+  if (!callback) throw new Error('callback을 설정해야합니다.');
+  if (!sec || sec < 0) throw new Error('0보다 작은 수로 설정할 수 없습니다.');
   setTimeout(callback, sec);
 }
 
-runInDelay(() => {
-  console.log('만세!');
-}, 3);
+try {
+  runInDelay(() => {
+    console.log('만세!');
+  }, 2);
+} catch (error) {
+  console.error(error);
+}
