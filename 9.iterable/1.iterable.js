@@ -10,7 +10,19 @@ for (const item of array.entries()) {
 }
 
 // 일반 객체는 Symbol.iterator() 함수의 정의가 없어서 이터러블 하지 않다.
-const obj = { 0: 1, 1: 2 };
-for (const item of obj) {
-  console.log(item);
+// const obj = { 0: 1, 1: 2 };
+// for (const item of obj) {
+//   console.log(item);
+// }
+
+const iterator = array.values();
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+while (true) {
+  const item = iterator.next();
+  if (item.done) break;
+  console.log(item.value);
 }
