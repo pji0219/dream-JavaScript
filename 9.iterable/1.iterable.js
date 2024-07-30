@@ -15,6 +15,7 @@ for (const item of array.entries()) {
 //   console.log(item);
 // }
 
+// for...of 사용 안하고 수동적으로 구현
 const iterator = array.values();
 // console.log(iterator.next());
 // console.log(iterator.next());
