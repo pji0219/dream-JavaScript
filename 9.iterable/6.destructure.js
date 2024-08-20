@@ -11,3 +11,19 @@ const [y, x, z = 0] = point;
 console.log(y);
 console.log(x);
 console.log(z);
+
+function createEmoji() {
+  return ['apple', '🍎'];
+}
+
+const [title, emoji] = createEmoji();
+console.log(title);
+console.log(emoji);
+
+const pji = { name: 'pji', age: 20, job: 's/w engineer' };
+function display({ name, age, job }) {
+  console.log('이름', name);
+  console.log('나이', age);
+  console.log('직업', job);
+}
+display(pji);
